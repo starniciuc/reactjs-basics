@@ -1,0 +1,5 @@
+/.idea
+/node_modules
+/dist
+/reactjs-basics.iml
+npm-debug.txt
