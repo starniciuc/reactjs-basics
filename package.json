@@ -6,14 +6,18 @@
   "scripts": {
     "start": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline",
+    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
     "build:prod": "cp src/index.html dist/index.html && webpack -p"
   },
   "author": "Mihai Starniciuc",
   "license": "MIT",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
