@@ -1,6 +1,7 @@
 import React from "react";
+import { connect } from 'react-redux';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
     constructor(props) {
         super();
         this.state = {
@@ -16,6 +17,7 @@ export default class Home extends React.Component {
                 <input type="text" value={this.state.homeLink}
                        onChange={(event) => this.onHandleChange(event)} />
                 <button className="btn btn-primary" onClick={this.handleChangeLink.bind(this)}>ChangeLink</button>
+                <button className="btn btn-primary" onClick={this.handleChangeLink.bind(this)}>SetName</button>
             </div>
         );
     }
@@ -31,6 +33,22 @@ export default class Home extends React.Component {
     }
 
     handleChangeLink() {
-        this.props.changeLink(this.state.homeLink);
+        this.props.setName('Maria');
+        //this.props.changeLink(this.state.homeLink);
     }
 }
+
+const mapStateToProps = () => {return {}};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setName: (name) => {
+            dispatch({
+                type: 'SET_NAME',
+                payload: name
+            })
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
